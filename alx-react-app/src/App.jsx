@@ -3,12 +3,9 @@ import MainContent from './MainContent';
 import Footer from './Footer';
 
 function App() {
-
   return (
     <>
-        <Header />
-        <MainContent />
-        <Footer />
+      <Header /> <MainContent /> <Footer />
     </>
   )
 }
