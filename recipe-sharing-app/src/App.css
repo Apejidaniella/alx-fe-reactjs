@@ -38,5 +38,33 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #504b4b;
+} 
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
+
+.recipe-list {
+  margin-top: 50px;
+}
+
+.no-results {
+  text-align: center;
+  color: #c4bebe;
+  margin-top: 50px;
+}
+
+.recipe-card h3 {
+ background: #f9f9f9;
+  padding: 35px;
+  gap: 20px;
+  border-radius: 10px;
+  margin-right: 15px; 
+}
+
