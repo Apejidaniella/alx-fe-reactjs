@@ -8,6 +8,8 @@ import { useEffect } from 'react';
     const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
     const filterRecipes = useRecipeStore(state => state.filterRecipes);
     const searchTerm = useRecipeStore(state => state.searchTerm);
+    const addFavorite = useRecipeStore(state => state.addFavorite)
+    const generateRecommendations = useRecipeStore(state => state.generateRecommendations)
     const recipeList = filteredRecipes.length > 0 ? filteredRecipes : recipes
 
     useEffect(() => {
@@ -20,10 +22,16 @@ import { useEffect } from 'react';
       <div className="recipe-list">
         <SearchBar />
         {recipeList.map(recipe => (
-          <Link key={recipe.id} to={`/details/${recipe.id}`}>
+          <div key={recipe.id}>
+          <Link to={`/details/${recipe.id}`}>
             <h3 className="recipe-card">{recipe.title}</h3>
             <p className="no-results">{recipe.description}</p>
           </Link>
+          <button onClick={() => {
+            addFavorite(recipe)
+            generateRecommendations()
+          }}>Add Favorite</button>
+          </div>
         ))}
       </div>
     );
