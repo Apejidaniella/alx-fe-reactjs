@@ -1,6 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import RecipeDetails from "./components/RecipeDetails";
 import Home from "./components/Home";
+import AddRecipeForm from "./components/AddRecipeForm";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
      <BrowserRouter> 
         <Routes>
            <Route path="/" element={<Home />} /> 
+           <Route path="/add-recipe" element={<AddRecipeForm />} />
            <Route path="/details/:recipeId" element={<RecipeDetails />} /> 
         </Routes>
       </BrowserRouter>
