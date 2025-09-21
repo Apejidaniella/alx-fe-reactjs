@@ -5,19 +5,19 @@ const Search = () => {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setError(false);
     setUserData(null);
 
     try {
       const data = await fetchUserData(username);
       setUserData(data);
     } catch (err) {
-      setError("Looks like we can’t find the user");
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -25,6 +25,7 @@ const Search = () => {
 
   return (
     <div className="flex flex-col items-center mt-10">
+      {/* Search Form */}
       <form onSubmit={handleSubmit} className="flex space-x-2">
         <input
           type="text"
@@ -41,8 +42,9 @@ const Search = () => {
         </button>
       </form>
 
+      {/* Conditional Rendering */}
       {loading && <p className="mt-4">Loading...</p>}
-      {error && <p className="mt-4 text-red-600">{error}</p>}
+      {error && <p className="mt-4 text-red-600">Looks like we cant find the user</p>}
       {userData && (
         <div className="mt-6 p-4 border rounded-lg shadow-lg text-center">
           <img
@@ -50,7 +52,9 @@ const Search = () => {
             alt={userData.login}
             className="w-24 h-24 rounded-full mx-auto"
           />
-          <h2 className="mt-2 text-lg font-semibold">{userData.name || userData.login}</h2>
+          <h2 className="mt-2 text-lg font-semibold">
+            {userData.name || userData.login}
+          </h2>
           <a
             href={userData.html_url}
             target="_blank"
