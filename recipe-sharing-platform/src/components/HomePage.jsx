@@ -9,8 +9,8 @@ function  HomePage() {
     setRecipes(data)
   }, [data]);
   return (
-    <div className='p-4 flex-wrap'>
-        <div className='flex items-center gap-4'>
+    <div className='p-4 flex-wrap '>
+        <div className='flex items-center gap-4 rounded-md shadow-xl'>
             {recipes.length > 0 && recipes.map((recipe, index) => (
             <RecipeCard key={index} recipe={recipe} />
         ))}
