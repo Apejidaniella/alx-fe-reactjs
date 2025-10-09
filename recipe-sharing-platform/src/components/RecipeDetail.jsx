@@ -21,6 +21,22 @@ function RecipeDetail() {
         <img src={recipe.image} alt={recipe.title} className='rounded-xl h-[180px] w-full' />
            <h3 className='mb-2 text-lg font-bold text-slate-900'>{recipe.title}</h3>
            <p className='font-normal text-gray-700'>{recipe.summary} </p>
+           <div className='mt-4'>
+            <h3>Ingredients</h3>
+            <ul>
+                {recipe.ingredients.map((ingredient, index) => (
+                    <li key={index}>{`${index + 1}. ${ingredient}`}</li>
+                ))}
+            </ul>
+           </div>
+           <div className='mt-4'>
+            <h3>Instructions</h3>
+            <ul>
+                {recipe.instructions.map((instruction, index) => (
+                    <li key={index}>{`${index + 1}. ${instruction}`}</li>
+                ))}
+            </ul>
+           </div>
     </div>
   )
 }

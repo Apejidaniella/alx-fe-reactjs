@@ -3,12 +3,16 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "instructions": ["cook the spaghetti", "put it in a pot", "boil it", "put spice"] ,
+    "ingredients": ["curry", "onion", "garlic", "ginger", "spaghetti"] ,
     "image": "https://via.placeholder.com/150"
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "instructions": ["cook the chicken", "put it in a pot", "boil it", "put spice"] ,
+    "ingredients": ["curry", "onion", "garlic", "ginger", "chicken"] ,
     "image": "https://via.placeholder.com/150"
   }
 ]
