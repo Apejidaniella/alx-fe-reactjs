@@ -6,7 +6,7 @@ function AddRecipeForm() {
     title: "",
     summary: "",
     ingredients: "",
-    instructions: "",
+    steps: "",
    });
 
    const [validation, setValidation] = useState(true)
@@ -19,7 +19,7 @@ function AddRecipeForm() {
 
    function handleSubmit(event) {
     event.preventDefault();
-    if (formData.title.length < 3 || formData.summary.length < 3 || formData.instructions.length < 3 || formData.ingredients.length < 3) {
+    if (formData.title.length < 3 || formData.summary.length < 3 || formData.steps.length < 3 || formData.ingredients.length < 3) {
        setValidation(false)
        setErrorMessage("input fields must be greater than 3 characters")
        return
@@ -50,8 +50,8 @@ function AddRecipeForm() {
            <textarea value={formData.ingredients} name="ingredients" className='border' id="ingredients" rows={5} required onChange={handleChange}></textarea>
         </div>
         <div className='flex flex-col gap-2'>
-            <label htmlFor="instructions">Steps</label>
-           <textarea value={formData.instructions} name="instructions" className='border' id="instructions" rows={5} required onChange={handleChange} ></textarea>
+            <label htmlFor="steps">Steps</label>
+           <textarea value={formData.steps} name="steps" className='border' id="steps" rows={5} required onChange={handleChange} ></textarea>
         </div>
         <div>
             <button type='submit' className='block bg-blue-500 text-white w-full py-2 px-4 cursor-pointer hover:opacity-90'>Submit</button>
