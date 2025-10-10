@@ -50,7 +50,7 @@ function AddRecipeForm() {
            <textarea value={formData.ingredients} name="ingredients" className='border' id="ingredients" rows={5} required onChange={handleChange}></textarea>
         </div>
         <div className='flex flex-col gap-2'>
-            <label htmlFor="instructions">Instructions</label>
+            <label htmlFor="instructions">Steps</label>
            <textarea value={formData.instructions} name="instructions" className='border' id="instructions" rows={5} required onChange={handleChange} ></textarea>
         </div>
         <div>
