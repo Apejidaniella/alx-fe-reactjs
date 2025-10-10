@@ -9,9 +9,9 @@ function AddRecipeForm() {
     steps: "",
    });
 
-   const [validation, setValidation] = useState(true)
+   const [validate, setValidate] = useState(true)
 
-   const [errorMessage, setErrorMessage] = useState("")
+   const [errors, setErrors] = useState("")
 
    function handleChange(event) {
     setFormData({...formData, [event.target.name]: event.target.value})
@@ -20,23 +20,23 @@ function AddRecipeForm() {
    function handleSubmit(event) {
     event.preventDefault();
     if (formData.title.length < 3 || formData.summary.length < 3 || formData.steps.length < 3 || formData.ingredients.length < 3) {
-       setValidation(false)
-       setErrorMessage("input fields must be greater than 3 characters")
+       setValidate(false)
+       setErrors("input fields must be greater than 3 characters")
        return
     }
 
     if (formData.ingredients.split(", ").length < 3) {
-        setValidation(false)
-        setErrorMessage("you must have more than 2 Ingredients")
+        setValidate(false)
+        setErrors("you must have more than 2 Ingredients")
         return
     }
-    setValidation(true)
-    setErrorMessage("")
+    setValidate(true)
+    setErrors("")
    }
 
   return (
     <form className='space-y-4 sm:w-[500px]' onSubmit={handleSubmit}>
-        <p className='text-red-500'>{!validation && errorMessage}</p>
+        <p className='text-red-500'>{!validate && errors}</p>
         <div className='flex flex-col gap-2'>
             <label htmlFor="title">Title</label>
             <input type="text" value={formData.title} id='title' name='title' className='border' required onChange={handleChange} /> 
