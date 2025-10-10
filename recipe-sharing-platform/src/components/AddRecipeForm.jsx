@@ -35,8 +35,8 @@ function AddRecipeForm() {
    }
 
   return (
-    <form className='space-y-4 sm:w-[500px]' onSubmit={handleSubmit}>
-        <p className='text-red-500'>{!validate && errors}</p>
+    <form className='space-y-4 sm:w-[400px] md:w-[500px] rounded shadow-xl' onSubmit={handleSubmit}>
+        <p className='text-red-500 font-bold'>{!validate && errors}</p>
         <div className='flex flex-col gap-2'>
             <label htmlFor="title">Title</label>
             <input type="text" value={formData.title} id='title' name='title' className='border' required onChange={handleChange} /> 
