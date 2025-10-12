@@ -5,17 +5,17 @@ import * as Yup from 'yup';
 
 const validationSchema = Yup.object({
   username: Yup.string()
-    .min(3, 'Must be at least 3 characters') 
-    .required('Required'),
+    .required('Required')
+    .min(3, 'Must be at least 3 characters'),
   
   email: Yup.string()
+    .required('Required')
     .email('Invalid email address')
-    .min(3, 'Must be at least 3 characters') 
-    .required('Required'),
+    .min(3, 'Must be at least 3 characters'),
   
   password: Yup.string()
-    .min(3, 'Must be at least 3 characters') 
-    .required('Required'),
+    .required('Required')
+    .min(3, 'Must be at least 3 characters'),
 });
 
 
