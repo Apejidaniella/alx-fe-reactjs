@@ -25,8 +25,18 @@ function RegistrationForm() {
    function handleSubmit(event) {
     event.preventDefault();
 
-    if (username.length < 3 || email.length < 3 || password.length < 3) {
-       setErrors("input fields must be greater than 3 characters");
+    if (!username) {
+       setErrors("Username cannot be empty");
+       setIsSubmitted(false);
+       return
+    }
+    if (!email) {
+       setErrors("Email cannot be empty");
+       setIsSubmitted(false);
+       return
+    }
+    if (!password) {
+       setErrors("Password cannot be empty");
        setIsSubmitted(false);
        return
     }
