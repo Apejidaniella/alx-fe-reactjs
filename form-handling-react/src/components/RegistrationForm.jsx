@@ -9,6 +9,11 @@ function RegistrationForm() {
     password: "",
     };
    
+   const [username, setUsername] = useState("");
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+
+
    const [formData, setFormData] = useState(initialFormData);
    const [errors, setErrors] = useState("");
    const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,7 +25,7 @@ function RegistrationForm() {
    function handleSubmit(event) {
     event.preventDefault();
 
-    if (formData.username.length < 3 || formData.email.length < 3 || formData.password.length < 3) {
+    if (username.length < 3 || email.length < 3 || password.length < 3) {
        setErrors("input fields must be greater than 3 characters");
        setIsSubmitted(false);
        return
@@ -28,22 +33,24 @@ function RegistrationForm() {
 
        setErrors('');
        setIsSubmitted(true);
-       setFormData(initialFormData); 
+       setUsername(""); 
+       setPassword(""); 
+       setEmail(""); 
     };
    
   return (
     <form className='space-y-4 sm:w-[400px] md:w-[500px] rounded shadow-xl'onSubmit={handleSubmit}>
         <div className='flex flex-col gap-2'>
             <label className='font-bold' htmlFor="username">Username</label>
-            <input id='username' type="text" value={formData.username} name='username' className='border' required  onChange={handleChange}/>
+            <input id='username' type="text" value={username} name='username' className='border' required  onChange={(event) => setUsername(event.target.value)}/>
         </div>
         <div className='flex flex-col gap-2'>
             <label className='font-bold' htmlFor="email">Email</label>
-            <input id='email' type="email" value={formData.email} name='email' className='border' required onChange={handleChange}/>
+            <input id='email' type="email" value={email} name='email' className='border' required onChange={(event) => setEmail(event.target.value)}/>
         </div>
         <div className='flex flex-col gap-2'>
             <label className='font-bold' htmlFor="password">Password</label>
-            <input id='password' type="password" value={formData.password} name='password' className='border' required onChange={handleChange}/>
+            <input id='password' type="password" value={password} name='password' className='border' required onChange={(event) => setPassword(event.target.value)}/>
         </div>
 
         {errors && <p style={{ color: 'red' }}>{errors}</p>}
