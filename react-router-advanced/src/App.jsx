@@ -6,7 +6,7 @@ import ProfileSettings from "./components/ProfileSettings"
 import BlogPost from "./components/BlogPost"
 import BlogDetails from "./components/BlogDetails"
 import Home from "./components/Home"
-import Protected from "./components/Protected"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
  
@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route element={<Protected />}>
+          <Route element={<ProtectedRoute/>}>
             <Route path="/profile" element={<Profile />}>
               <Route path="/profile/details" element={<ProfileDetails />} />
               <Route path="/profile/settings" element={<ProfileSettings />} />

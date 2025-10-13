@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 
 function Protected() {
   const user = null;
@@ -8,9 +8,9 @@ function Protected() {
   }
 
   return (
-    <div>
-       <Outlet />
-    </div>
+    <>
+     <Route path="/profile" element={<Profile />} />
+    </>
   )
 }
 
