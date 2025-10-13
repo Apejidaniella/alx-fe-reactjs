@@ -1,8 +1,9 @@
 import React from 'react'
 import { Navigate, Route } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 function Protected() {
-  const user = null;
+  const [user, setUser] = useAuth()
   if (!user) {
     return <Navigate to={"/"} /> 
   }
