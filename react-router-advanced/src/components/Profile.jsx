@@ -2,7 +2,12 @@ import React from 'react'
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <>
+       <Routes>
+            <Route path="/profile/details" element={<ProfileDetails />} />
+            <Route path="/profile/settings" element={<ProfileSettings />} />
+        </Routes>
+    </>
   )
 }
 
