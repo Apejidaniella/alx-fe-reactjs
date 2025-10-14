@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery } from 'react-query'
 
 function PostsComponent() {
-   const { isPending, isLoading, isError, data:fetchPosts } = useQuery({
+   const { isPending, isLoading, isError, data:fetchPosts, refetch } = useQuery({
     queryKey: ['repoData'],
     queryFn: () =>
       fetch('https://jsonplaceholder.typicode.com/posts').then((res) =>
@@ -20,6 +20,7 @@ function PostsComponent() {
         <h1>{post.name}</h1>
         <p>{post.description}</p>
       </div>))}
+      <button onClick={() => refetch()}>Refetch</button>
     </div>
   )
 }
