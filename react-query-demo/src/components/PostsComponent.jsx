@@ -8,7 +8,7 @@ function PostsComponent() {
       fetch('https://jsonplaceholder.typicode.com/posts').then((res) =>
         res.json(),
       ),
-  })
+  }, {cacheTime: 2, staleTime: 2, refetchOnWindowFocus: false, keepPreviousData: false})
     console.log(data)
   if (isLoading) return 'Loading...'
 
